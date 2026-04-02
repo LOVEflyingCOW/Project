@@ -6,7 +6,7 @@ func Hello() {
 	fmt.Println("123456")
 }
 
-func NameandAge() {
+func NameAndAge() {
 	fmt.Print("请输入你的名字：")
 	var name string
 	var age int
@@ -46,4 +46,5 @@ func main() {
 	var age2 [3]int
 	fmt.Println(age2)
 	fmt.Println(age2[0:2])
+	fmt.Println(age2[2])
 }
