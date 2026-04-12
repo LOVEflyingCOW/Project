@@ -1,7 +1,7 @@
 package router
 
 import (
-	"net/http"
+	"exchangeapp/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -10,16 +10,15 @@ func SetupRouter() *gin.Engine {
 	r := gin.Default()
 	auth := r.Group("/api/auth")
 	{
-		auth.POST("/login", func(ctx *gin.Context) {
-			ctx.AbortWithStatusJSON(http.StatusOK, gin.H{
-				"msg": "Login Success",
-			})
-		})
-		auth.POST("/register", func(ctx *gin.Context) {
-			ctx.AbortWithStatusJSON(http.StatusOK, gin.H{
-				"msg": "Register Success",
-			})
-		})
+		auth.POST("/login", controllers.Login) //func(ctx *gin.Context) {
+		//ctx.AbortWithStatusJSON(http.StatusOK, gin.H{
+		//	"msg": "Login Success",
+		//	}
+
+		auth.POST("/register", controllers.Register) // func(ctx *gin.Context) {
+		//ctx.AbortWithStatusJSON(http.StatusOK, gin.H{
+		//	"msg": "Register Success",
+		//}
 
 	}
 	return r

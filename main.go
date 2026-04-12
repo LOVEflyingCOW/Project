@@ -8,5 +8,5 @@ import (
 func main() {
 	config.InitConfig()
 	r := router.SetupRouter()
-	r.Run() // listen and serve on 0.0.0.0:8080
+	r.Run(config.AppConfig.App.Port) // listen and serve on 0.0.0.0:3000
 }

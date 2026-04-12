@@ -19,8 +19,13 @@ func initDB() {
 	}
 
 	sqlDB, err := db.DB()
+
+	if err != nil {
+		log.Fatal("Failed to get database sql.DB,got error:%v", err)
+	}
+
 	// SetMaxIdleConns 用于设置连接池中空闲连接的最大数量。
-	sqlDB.SetMaxIdleConns(AppConfig.Database.MaxIdelConns)
+	sqlDB.SetMaxIdleConns(AppConfig.Database.MaxIdleConns)
 
 	// SetMaxOpenConns 设置打开数据库连接的最大数量。
 	sqlDB.SetMaxOpenConns(AppConfig.Database.MaxOpenConns)

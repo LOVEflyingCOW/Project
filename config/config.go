@@ -13,7 +13,7 @@ type Config struct {
 	}
 	Database struct {
 		Dsn          string
-		MaxIdelConns int
+		MaxIdleConns int
 		MaxOpenConns int
 	}
 }
